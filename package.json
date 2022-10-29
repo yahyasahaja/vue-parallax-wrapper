@@ -1,5 +1,6 @@
 {
   "name": "vue-parallax-wrapper",
+  "description": "Vue component wrapper for parallax effect using vue slot",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -8,7 +9,7 @@
   ],
   "main": "./dist/vue-parallax-wrapper.umd.cjs",
   "module": "./dist/vue-parallax-wrapper.js",
-  "types": "dist/vue-parallax-wrapper.d.ts",
+  "types": "./dist/vue-parallax-wrapper.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vue-parallax-wrapper.js",
@@ -20,6 +21,24 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "keywords": [
+    "front-end",
+    "parallax",
+    "vue",
+    "component",
+    "wrapper",
+    "slot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yahyasahaja/vue-parallax-wrapper.git"
+  },
+  "author": "Yahya Sahaja <[yahya.sahaja2@gmail.com](mailto:yahya.sahaja2@gmail.com)> (mailto:yahya.sahaja2@gmail.com)",
+  "bugs": {
+    "url": "https://github.com/yahyasahaja/vue-parallax-wrapper/issues"
+  },
+  "homepage": "https://github.com/yahyasahaja/vue-parallax-wrapper#readme",
+  "license": "MIT",
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
     "cross-env": "^7.0.3",

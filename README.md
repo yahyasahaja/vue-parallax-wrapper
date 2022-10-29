@@ -1,16 +1,69 @@
-# Vue 3 + TypeScript + Vite
+# vue-parallax-wrapper
+Vue component wrapper for parallax effect using vue slot that let you define parallax scenario for your components with desired each start and end value related to the scroll position.
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Install
+```sh
+# yarn
+yarn add vue-component-wrapper
 
-## Recommended IDE Setup
+# npm
+npm i vue-component-wrapper
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Usage
+```vue
+<template>
+  <Parallax :configs="parallaxConfigs" v-slot="{ values: {
+    contentOpacity,
+    contentTranslateX,
+  } }">
+    <section
+      class="fixed top-0">
+      <div class="w-full" :style="{ opacity: contentOpacity, transform: `translateX(${contentTranslateX}px)`}">
+        Parallax Content
+      </div>
+    </section>
+  </Parallax>
+</template>
 
-## Type Support For `.vue` Imports in TS
+<script setup lang="ts">
+import { Parallax, Config } from './Parallax.vue';
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+const parallaxConfigs = [
+  {
+    start: 0,
+    end: 300,
+    variable: 'contentOpacity',
+    startValue: 0,
+    endValue: 1,
+  },
+  {
+    start: 0,
+    end: 300,
+    variable: 'contentTranslateX',
+    startValue: -80,
+    endValue: 0,
+  },
+  {
+    start: 500,
+    end: 800,
+    variable: 'contentTranslateX',
+    startValue: 0,
+    endValue: 80,
+  },
+] as Config[];
+</script>
+```
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+## Parallax Config
+| Props      | Data type | Description                            |
+| ---------- | --------- | -------------------------------------- |
+| start      | `number`  | scrol start position                   |
+| end        | `number`  | scroll end position                    |
+| variable   | `string`  | variable to be exported in scoped slot |
+| startValue | `number`  | parallax start value                   |
+| endValue   | `number`  | parallax end value                     |
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+## License
+
+MIT License.
