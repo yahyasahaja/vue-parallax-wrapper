@@ -1,7 +1,6 @@
 {
   "name": "vue-parallax-wrapper",
   "description": "Vue component wrapper for parallax effect using vue slot",
-  "private": true,
   "version": "1.0.0",
   "type": "module",
   "files": [
