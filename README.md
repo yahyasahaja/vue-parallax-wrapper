@@ -1,6 +1,8 @@
 # vue-parallax-wrapper
 Vue component wrapper for parallax effect using vue slot that let you define parallax scenario for your components with desired each start and end value related to the scroll position.
 
+✨ This library compatible with vue 2 and vue 3 ✨
+
 ## Install
 ```sh
 # yarn
@@ -27,7 +29,7 @@ npm i vue-component-wrapper
 </template>
 
 <script setup lang="ts">
-import { Parallax, Config } from './Parallax.vue';
+import { Parallax, Config } from 'vue-parallax-wrapper';
 
 const parallaxConfigs = [
   {
@@ -58,12 +60,11 @@ const parallaxConfigs = [
 ## Parallax Config
 | Props      | Data type | Description                            |
 | ---------- | --------- | -------------------------------------- |
-| start      | `number`  | scrol start position                   |
+| start      | `number`  | scroll start position                  |
 | end        | `number`  | scroll end position                    |
 | variable   | `string`  | variable to be exported in scoped slot |
 | startValue | `number`  | parallax start value                   |
 | endValue   | `number`  | parallax end value                     |
 
 ## License
-
 MIT License.
